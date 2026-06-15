@@ -133,3 +133,14 @@ target_group_arn = aws_lb_target_group.asg.arn
  }
 }
 
+terraform {
+backend "s3" {
+# Replace this with your bucket name!
+bucket         = "terraform-up-and-running-tfstate-dan-2026"
+key            = "terraform_root_project/terraform.tfstate"
+region         = "us-east-2"
+# Replace this with your DynamoDB table name!
+dynamodb_table = "terraform-up-and-running-locks"
+encrypt        = true
+ }
+}
