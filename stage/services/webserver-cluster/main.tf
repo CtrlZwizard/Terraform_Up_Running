@@ -137,7 +137,7 @@ terraform {
 backend "s3" {
 # Replace this with your bucket name!
 bucket         = "terraform-up-and-running-tfstate-dan-2026"
-key            = "terraform_root_project/terraform.tfstate"
+key            = "stage/services/webserver-cluster/terraform.tfstate"
 region         = "us-east-2"
 # Replace this with your DynamoDB table name!
 dynamodb_table = "terraform-up-and-running-locks"
