@@ -144,3 +144,12 @@ dynamodb_table = "terraform-up-and-running-locks"
 encrypt        = true
  }
 }
+
+data "terraform_remote_state" "db" {
+backend = "s3"
+config = {
+bucket = "terraform-up-and-running-tfstate-dan-2026"
+key = "stage/data-stores/mysql/terraform.tfstate"
+region = "us-east-2"
+}
+}
